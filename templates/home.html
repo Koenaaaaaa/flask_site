@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalyZones</title>
+    <style>
+      /* CSS styles can be placed within the <style> tag or preferably in an external CSS file */
+      /* Style the header */
+      header {
+        background-color: #4a4e69;
+        padding: 20px;
+        /* text-align: center; */
+        font-size: 15px;
+        color: white;
+      }
+
+      /* Style the navigation menu */
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        background-color: #f2f2f2;
+      }
+
+      nav ul li {
+        margin: 10px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #4a4e69;
+        padding: 8px 16px;
+      }
+
+      nav ul li a:hover {
+        background-color: #4a4e69;
+        color: white;
+      }
+
+      /* Style the main section */
+      section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      section h1 {
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+
+      section p {
+        margin-bottom: 12px;
+      }
+
+      /* Style the map iframe */
+      iframe {
+        display: block;
+        margin: 20px auto;
+      }
+
+      /*  Style the location search form */
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        background-color: #f2f2f2;
+      }
+
+      form label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: #4a4e69;
+      }
+
+      form input[type="search"] {
+        padding: 8px 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+        margin-bottom: 12px;
+        width: 200px;
+      }
+
+      form button {
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #4a4e69;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #333;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CalyZones</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#">Country</a></li>
+        <li><a href="#">Province</a></li>
+        <li><a href="#">City</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h1>London</h1>
+      <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+      <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+    </section>
+  
+  <aside>
+    <section>
+    
+      <form>
+        <p>Location 1</p>
+        <input type="search">
+        <p>Location 2</p>
+        <input type="search">
+      <div>
+        <button type="submit">Search</button>
+      </div>
+        </form>
+    </section>
+  </aside>
+      <section>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14315.890454021099!2d28.100514069370654!3d-26.23007938477846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950fd48679af41%3A0xd807a22e2ae270bd!2sElandsfontein%20107-Ir%2C%20Johannesburg%20South%2C%202075!5e0!3m2!1sen!2sza!4v1686258508422!5m2!1sen!2sza" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </body>
+</html>
