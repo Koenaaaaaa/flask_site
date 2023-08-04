@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="https://flasksite--koenaaaaaa.repl.co/static/Calybre Icon White on Steel Blue.png">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <title>CalyZones</title>
     <style>
       /* CSS styles can be placed within the <style> tag or preferably in an external CSS file */
       /* Style the header */
       header {
-        background-color: #4a4e69;
+        background-color: #0d1b2a;
+        height: 100px;
+      }
+      
+      header img {
+        width: 150px;
+        height: 100px;
         padding: 20px;
-        /* text-align: center; */
-        font-size: 15px;
-        color: white;
+      }
+      
+      form img {
+        width: 100px;
+        height: 50px; 
       }
 
       /* Style the navigation menu */
@@ -31,12 +47,12 @@
 
       nav ul li a {
         text-decoration: none;
-        color: #4a4e69;
+        color: #1b263b;
         padding: 8px 16px;
       }
 
       nav ul li a:hover {
-        background-color: #4a4e69;
+        background-color: #1b263b;
         color: white;
       }
 
@@ -58,21 +74,20 @@
 
       /* Style the map iframe */
       iframe {
-        display: block;
+        display: center;
         margin: 20px auto;
+        padding-top: 50px;
       }
 
       /*  Style the location search form */
       form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         margin-top: 20px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-left: 70px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         border-radius: 4px;
-        background-color: #f2f2f2;
+        
+        width: 20rem;
       }
 
       form label {
@@ -81,20 +96,15 @@
         color: #4a4e69;
       }
 
-      form input[type="search"] {
-        padding: 8px 12px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        outline: none;
-        margin-bottom: 12px;
-        width: 200px;
+      form input[type="text"] {
+        width: 100%;
+        height: 30px;
       }
 
       form button {
         padding: 8px 16px;
         font-size: 16px;
-        background-color: #4a4e69;
+        background-color: #415a77;
         color: white;
         border: none;
         border-radius: 4px;
@@ -104,43 +114,180 @@
       form button:hover {
         background-color: #333;
       }
+      
+      body {
+        background-image: url('https://flasksite--koenaaaaaa.repl.co/static/Globe2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        min-height: 100vh; /* Set the minimum height of the body to the full viewport height */
+        display: flex; /* Use flexbox to align the elements vertically */
+        flex-direction: column; /* Align the elements from top to bottom */
       }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>CalyZones</h1>
-    </header>
-    <nav>
-      <ul>
-        <li><a href="#">Country</a></li>
-        <li><a href="#">Province</a></li>
-        <li><a href="#">City</a></li>
-      </ul>
-    </nav>
+             .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
 
-    <section>
-      <h1>London</h1>
-      <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-      <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-    </section>
+        .image-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .image-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-item .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .image-item:hover .image-caption {
+            opacity: 1;
+        }
+      /* Style the footer */
+           /* Style the footer */
+        footer {
+            background-color: #0d1b2a;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   
-  <aside>
-    <section>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+     <script>
+         $(document).ready(function() {
+    $('#remove-iframe').click(function() {
+      $('#my-iframe').remove();
+    });
+  });
+
+</script>
+  <script>
+       var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("image-item");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change slide every 2 seconds
+        }
+  </script>
+
+  
+</head>
+
+<header style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="https://flasksite--koenaaaaaa.repl.co/static/Caly.jpg" class="img-fluid">
+  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" style="padding-right: 20px;" class="bi bi-person-circle" viewBox="0 0 16 16">
+    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+  </svg>
+</header>
+
+    <body>
+<div class="container" style="display: flex;">
+  <div class="col" style="flex: 1;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14315.890454021099!2d28.100514069370654!3d-26.23007938477846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950fd48679af41%3A0xd807a22e2ae270bd!2sElandsfontein%20107-Ir%2C%20Johannesburg%20South%2C%202075!5e0!3m2!1sen!2sza!4v1686258508422!5m2!1sen!2sza" width="90%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      
+        
     
-      <form>
-        <p>Location 1</p>
-        <input type="search">
-        <p>Location 2</p>
-        <input type="search">
-      <div>
-        <button type="submit">Search</button>
+    </iframe>
+  </div>
+
+  <div class="col" style="flex: 1; width: 20rem; height: 20rem; opacity: 0.8; padding: 20px;">
+    <form method="post" action="/">
+      <h5 style="color:#fff">Choose locations</h5>
+      <br>
+      <div class="form-group">
+        <label for="input1" style="color:#fff">Location 1:</label>
+        <input type="text" class="form-control" name="input1" id="input1" placeholder="Enter location">
       </div>
-        </form>
-    </section>
-  </aside>
-      <section>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14315.890454021099!2d28.100514069370654!3d-26.23007938477846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950fd48679af41%3A0xd807a22e2ae270bd!2sElandsfontein%20107-Ir%2C%20Johannesburg%20South%2C%202075!5e0!3m2!1sen!2sza!4v1686258508422!5m2!1sen!2sza" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
+      <br>
+      <div class="form-group">
+        <label for="input2" style="color:#fff">Location 2:</label>
+        <input type="text" class="form-control" name="input2" id="input2" placeholder="Enter location">
+      </div>
+      <br>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ region or "Region" }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {% for region in regions %}
+          <a class="dropdown-item" href="#">{{ region }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <br>
+      <button type="submit" id="remove-iframe" value="find_shortest_route" class="btn btn-primary">Launch</button>
+    </form>
+  </div>
+</div>
+
+
+    <div class="container-flex" style="background-color:#0d1b2a;opacity:80%; margin-left:40px; "">
+        <h1 class="mt-4 mb-2" style="color: #fff">Image Gallery - Suggested location: Manaka Coffee, Waterfall </h1>
+        <div class="row">
+            {% for photo in photos %}
+                <div class="col-md-4">
+                    <div class="image-item">
+                        <img src="{{ photo }}" alt="{{ photo }}" style="max-height:250px; width:300px;">
+                       
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+
+
+
+  </div>
+      
+
+      
+
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+
+   
   </body>
+      
 </html>
