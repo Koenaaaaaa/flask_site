@@ -5,8 +5,8 @@ import json
 
 app = Flask(__name__)
 
-API_KEY = "AIzaSyD1eohPlduLI3LH1paBPI9dlK0U8Kbhhfo"
-API_KEY1 = "AIzaSyD3rrlb6QwFiAUI7YZeB35s6Qi52KsigaQ"
+API_KEY = ""
+API_KEY1 = ""
 
 
 def calculate_distance(origin, destination):
